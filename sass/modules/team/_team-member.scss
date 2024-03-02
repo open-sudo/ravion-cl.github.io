@@ -1,0 +1,299 @@
+.team-member-card {
+  position: relative;
+  width: 100%;
+  height: 545px;
+  overflow: hidden;
+
+  @include xl{
+    height: 500px;
+  }
+  @include lg{
+    height: 450px;
+  }
+  @include md{
+    height: 450px;
+  }
+  @include xs{
+    height: 450px;
+  }
+
+  &:hover {
+    .image {
+      &:before {
+        height: 250%;
+        transition: all 900ms linear;
+        background-color: transparent;
+      }
+
+      img {
+        transform: scale(1.1);
+        @include transition;
+      }
+      .social-profile {
+        height: 100%;
+        .icon {
+          // content: '\f068';
+          @include transition;
+          .fa-plus{
+            visibility: hidden;
+            opacity: 0;
+            transform: scale(0);
+            margin-left: -17px; 
+            @include transition;
+          }
+          .fa-minus{
+            visibility: visible;
+            opacity: 1;
+            transform: scale(1);
+            margin-left: 0;
+            @include transition;
+          }
+        }
+  
+        .icon-list {
+          visibility: visible;
+          opacity: 1;
+          // transform: translateY(1%);
+          margin-top: 0;
+          @include transition;
+        }
+      }
+    }
+    
+  }
+
+  .image {
+    border-radius: 12px;
+    overflow: hidden;
+    // position: relative;
+    // width: 100%;
+    height: 100%;
+
+    &:before {
+      position: absolute;
+      width: 200%;
+      height: 0%;
+      left: 50%;
+      top: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%) rotate(-45deg);
+      content: "";
+      z-index: 1;
+    }
+
+    img {
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.001);
+      @include transition;
+      @include sm{
+        height: unset;
+      }
+    }
+
+    .social-profile {
+      position: absolute;
+      z-index: 2;
+      top: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      overflow: hidden;
+      border-radius: 50px;
+      height: 50px;
+      @include transition;
+      .icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 20px;
+        background-color: $orange-color;
+        color: $black;
+        // content: '\2b';
+        // font-family: $font-awesome;
+        z-index: 10;
+        position: relative;
+        flex-shrink: 0;
+        @include transition;
+        .fa-plus{
+          visibility: visible;
+          opacity: 1;
+          transform: scale(1);
+          margin-right: 0;
+          @include transition;
+        }
+        .fa-minus{
+          visibility: hidden;
+          opacity: 0;
+          transform: scale(0);
+          margin-left: -17px;
+          @include transition;
+        }
+      }
+
+      
+
+      .icon-list {
+        padding: 0;
+        margin: 0;
+        visibility: hidden;
+        opacity: 0;
+        // transform: translateY(-100%);
+        margin-top: -100px;
+        @include transition;
+
+        a {
+          width: 50px;
+          height: 50px;
+          font-size: 20px;
+          color: $white;
+          background-color: #1877f2;
+          border-radius: 50%;
+          margin: 8px 0;
+          @include transition;
+
+          &:hover {
+            background-color: $black;
+            @include transition;
+          }
+          &:nth-child(2){
+            background-color: $black;
+          }
+          &:nth-child(3){
+            background-color: #0077b5;
+          }
+        }
+      }
+    }
+  }
+
+  .content-wrapper {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: 0 12px 0 0;
+    width: 70%;
+    padding: 30px 30px 0 0;
+    @include xl{
+      width: 74%;
+    }
+    @include rmaxwd(1199){
+      width: 91%;
+      padding: 0;
+      margin: 12px;
+      border-radius: 12px;
+    }
+    .shape {
+      position: absolute;
+      transform: rotate(180deg);
+      width: 12px;
+      height: 12px;
+      @include xl{
+        display: block;
+      }
+      @include rmaxwd(1199){
+        display: none;
+      }
+      &.left {
+        top: -12px;
+        left: 0;
+      }
+
+      &.right {
+        bottom: 0;
+        right: -12px;
+      }
+
+      svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+      gap: 15px;
+
+      @include rmaxwd(1199) {
+        padding: 20px 16px;
+      }
+
+      .title {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 500;
+        color: $black;
+        font-family: $heading-font;
+        margin: 0;
+
+        @include lg {
+          font-size: 18px;
+        }
+      }
+
+      .desc {
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 400;
+        color: $text-color;
+        font-family: $body-font;
+        margin: 0;
+      }
+    }
+
+    .social {
+      background: $orange-color;
+      padding: 18px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      width: 94%;
+      margin-top: -60px;
+      z-index: -1;
+      transition: all 0.5s ease-out;
+
+      a {
+        &:hover {
+          color: $primary-color;
+          @include transition;
+        }
+      }
+
+      i {
+        color: $white;
+      }
+    }
+  }
+
+  &:hover {
+    .content-wrapper {
+      .content {
+        z-index: 1;
+      }
+
+      .social {
+        margin-top: 0;
+        z-index: 0;
+      }
+    }
+  }
+}

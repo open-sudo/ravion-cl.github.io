@@ -1,0 +1,209 @@
+.portfolio-filter {
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px 27px;
+  justify-content: center;
+  margin-bottom: 63px;
+  flex-wrap: wrap;
+
+  @include rmaxwd(991) {
+    margin-bottom: 50px;
+  }
+  @include sm{
+    gap: 8px;
+  }
+
+  li {
+    list-style: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: $black;
+    padding: 4px 10px;
+    text-transform: capitalize;
+    cursor: pointer;
+    @include transition;
+
+    &.active {
+      color: $blue-color;
+      @include transition;
+      @include sm{
+        background-color: $black;
+        border-radius: 4px;
+        color: $white;
+      }
+    }
+  }
+
+}
+.portfolio-card {
+  background-color: $white;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  &:hover {
+    .image {
+      .content-wrapper {
+        visibility: visible;
+        opacity: 1;
+        @include transition;
+
+        .content {
+          transform: rotateX(0deg);
+          @include transition;
+        }
+      }
+      img {
+        transform: scale(1.1);
+        @include transition;
+      }
+    }
+  }
+  .image {
+    overflow: hidden;
+    position: relative;
+
+    img {
+       transform: scale(1);
+      @include transition;
+      width: 100%;
+    }
+  }
+  .content-wrapper {
+    padding: 30px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    @include transition;
+    background-color: rgba(16, 38, 82, 0.361);
+    display: flex;
+    align-items: end;
+
+    @include lg{
+      padding: 20px;
+    }
+    @include md{
+      padding: 12px;
+    }
+    @include xs{
+      padding: 12px;
+    }
+
+    .content {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      background-color: $white;
+      padding: 18px;
+      border-radius: 8px;
+      transform: rotateX(90deg);
+      @include transition;
+
+      @include md{
+        padding: 12px;
+      }
+
+      .sub-title {
+        color: $primary-color;
+        font-size: 16px;
+        line-height: initial;
+        font-weight: 500;
+        font-family: $body-font;
+        display: inline-block;
+        margin-bottom: 12px;
+
+        @include md{
+          margin-bottom: 8px;
+          font-size: 15px;
+        }
+        @include xs{
+          margin-bottom: 8px;
+        }
+      }
+      .title {
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 42px;
+        margin-bottom: 0;
+        color: $black;
+        
+
+        @include xl {
+          font-size: 24px;
+          line-height: 32px;
+        }
+        @include lg {
+          font-size: 22px;
+          line-height: 30px;
+        }
+        @include md {
+          font-size: 18px;
+          line-height: 24px;
+        }
+        @include sm {
+          font-size: 24px;
+          line-height: 32px;
+        }
+        @include xs {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+
+    }
+    .btn-wrapper {
+      position: relative;
+      @include transition;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        color: $black;
+        background-color: transparent;
+        border: 1px solid $orange-color;
+        @include transition;
+        i{
+          font-size: 22px;
+          line-height: normal;
+          font-weight: 700;
+          transform: rotate(-45deg);
+
+          @include md{
+            font-size: 20px;
+          }
+          @include xs{
+            font-size: 20px;
+          }
+        }
+
+        @include md {
+          width: 50px;
+          height: 50px;
+        }
+        @include xs {
+          width: 45px;
+          height: 45px;
+        }
+        &:hover {
+          @include transition;
+          background-color: $primary-color;
+          border-color: $primary-color;
+          color: $white;
+        }
+      }
+    }
+  }
+}

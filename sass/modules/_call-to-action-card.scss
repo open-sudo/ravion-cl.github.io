@@ -1,0 +1,126 @@
+.cta-area {
+  position: relative;
+  margin-bottom: -110px;
+  z-index: 99;
+}
+.cta-card {
+  display: flex;
+  background-color: $primary-color;
+  padding: 74px;
+  border-radius: 12px;
+  align-items: center;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  @include rmaxwd(991) {
+    padding: 50px;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+  }
+  @include sm{
+    padding: 36px;
+  }
+  .image {
+    position: absolute;
+    right: -75px;
+    bottom: 0;
+
+    @include rmaxwd(991) {
+      position: unset;
+    }
+  }
+  .cta-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-grow: 1;
+
+    @include rmaxwd(991) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    @include lg {
+      // align-items: flex-start;
+      // flex-direction: column;
+    }
+  }
+  .cta-content {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 48px;
+      color: $white;
+      line-height: initial;
+
+      @include rmaxwd(1399) {
+        font-size: 36px;
+      }
+      @include sm{
+        line-height: 42px;
+        padding-right: 40px;
+      }
+    }
+    .sub-title {
+      font-family: $body-font;
+      color: $white;
+      font-size: 21px;
+      margin-bottom: 0;
+    }
+  }
+  .cta-phone-number {
+    display: flex;
+    align-items: center;
+    gap: 20px 25px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    @include sm{
+      gap: 12px;
+    }
+
+    .icon {
+      width: 65px;
+      height: 65px;
+      background-color: $orange-color;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: $black;
+    }
+    .content {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 10px;
+      @include sm{
+        gap: 2px;
+      }
+
+      span {
+        display: inline-block;
+        width: 100%;
+        font-family: $heading-font;
+        color: $white;
+        font-weight: 400;
+      }
+      .title {
+        font-size: 18px;
+      }
+      .text {
+        font-size: 36px;
+
+        @include sm {
+          font-size: 24px;
+        }
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}

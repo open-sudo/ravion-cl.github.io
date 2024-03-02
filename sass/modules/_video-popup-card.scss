@@ -1,0 +1,137 @@
+.video-popup-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 224px;
+  height: 150px;
+  flex-shrink: 0;
+
+  @include xs {
+    width: 100%;
+    height: 250px;
+  }
+  .video-popup-image {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .video-popup-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    a {
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      background-color: rgb(42 185 126 / 80%);
+      border-radius: 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation: ripple 3s infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        color: $white;
+        font-size: 16px;
+      }
+      &:hover {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none;
+      }
+    }
+  }
+
+  // Style Two
+  &.style-2 {
+    width: unset;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 72px;
+    gap: 42px;
+    border-radius: unset;
+
+    @include lg{
+      padding: 48px;
+    }
+    @include xs{
+      width: 100%;
+      padding: 50px 30px;
+    }
+
+    &.overlay{
+      background-color: rgb(0 0 0 / 30%);
+    }
+    .video-popup-btn {
+      position: unset;
+      transform: unset;
+
+      @include sm{
+        display: inline-flex;
+        justify-content: center;
+      }
+
+      a {
+        width: 96px;
+        height: 96px;
+        background-color: #fedb5c;
+        background-image: none;
+      }
+    }
+    .content{
+      .title{
+        color: $white;
+
+        @include rmaxwd(991){
+          font-size: 40px;
+        }
+        @include sm{
+          font-size: 30px;
+          line-height: 46px;
+          text-align: center;
+        }
+
+        br{
+          @include rmaxwd(1199){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  &.style-three {
+    overflow: visible;
+    padding: 0;
+    box-shadow: none;
+
+    .video-popup-image {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .video-popup-btn {
+      left: 0;
+      @include rmaxwd(1199) {
+        left: 50%;
+      }
+      a {
+        width: 135px;
+        height: 135px;
+        @include gradient-color-red;
+
+        @include rmaxwd(767) {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}

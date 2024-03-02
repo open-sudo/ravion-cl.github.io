@@ -1,0 +1,17 @@
+.info-card {
+  &.style-2 {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+
+    @include rmaxwd(991) {
+      margin-bottom: 60px;
+    }
+    .title-wrapper {
+      .icon {
+        width: unset;
+        height: unset;
+      }
+    }
+  }
+}

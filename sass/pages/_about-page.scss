@@ -1,0 +1,113 @@
+// About Us Area
+.about-page-about-us-area {
+  padding-top: 140px;
+  padding-bottom: 154px;
+
+  @include rmaxwd(991) {
+   padding: 100px 0;
+  }
+  @include rmaxwd(767) {
+   padding: 70px 0;
+  }
+  .about-info-card {
+    .about-info-content {
+      padding-left: 120px;
+
+      @include rmaxwd(1199) {
+        padding-left: 0;
+        padding-top: 330px;
+      }
+      @include rmaxwd(767) {
+        padding-top: 150px;
+      }
+      @include rmaxwd(650) {
+        padding-top: 110px;
+      }
+    }
+  }
+}
+
+
+// Timeline Area
+.timeline-area {
+  &.about-page {
+    padding-top: 120px !important;
+  }
+}
+
+// Faq Area
+.faq-area{
+  &.style-3{
+    padding-top: 120px;
+    padding-bottom: 120px;
+    position: relative;
+
+    @include md {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    @include sm {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .section-title{
+      margin-bottom: 40px;
+
+      .title{
+        br{
+          @include xl{
+            display: none;
+          }
+          @include lg{
+            display: none;
+          }
+        }
+      }
+      .desc{
+        margin: 40px 0 0;
+      }
+    }
+  }
+}
+
+// Testimonial Area
+.testimonial-slider-area {
+  &.style-3 {
+    padding-top: 120px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    @include md{
+      padding-top: 100px;
+    }
+    @include sm{
+      padding-top: 80px;
+    }
+    .testimonial-slider-wrapper {
+      margin-top: 0;
+      margin-bottom: -150px;
+    }
+    .slider-arrow-btn-wrapper{
+      a{
+        width: 77px;
+        height: 52px;
+      }
+    }
+  }
+}
+
+// Client Logo
+.brand-slider-area {
+  &.style-3 {
+    padding: 235px 0 110px;
+
+    @include rmaxwd(991) {
+      padding: 220px 0 100px;
+    }
+    @include sm{
+      padding: 200px 0 80px;
+    }
+  }
+}

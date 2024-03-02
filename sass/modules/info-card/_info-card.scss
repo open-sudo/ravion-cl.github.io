@@ -1,0 +1,273 @@
+.info-card-wrapper {
+    position: relative;
+}
+.info-card {
+    background: $white;
+    padding: 50px 40px 56px 40px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 60px 0 rgba(2, 24, 93, 0.08);
+    @include transition;
+    @media only screen and (min-width: 991px) and (max-width: 1399px) {
+        padding: 30px 20px;
+    }
+
+    &:hover {
+        margin-top: -5px;
+        @include transition;
+        .image-wrapper {
+            .overlay {
+                @include transition;
+                opacity: 0.72;
+            }
+            img {
+                transform: scale(1.2);
+                @include transition;
+            }
+        }
+        .icon {
+            img {
+                transform: rotateY(360deg);
+                @include transition;
+            }
+        }
+    }
+    .info-card-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: 100%;
+    }
+    .divider {
+        &:before {
+            content: "";
+            position: absolute;
+            background-color: rgb(94, 111, 146);
+            opacity: 0.2;
+            right: 0;
+            height: 80%;
+            width: 1px;
+            top: 45px;
+        }
+    }
+
+    .image-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        transition: all 0.6s ease;
+        img {
+            width: 100%;
+            height: 100%;
+            transform: scale(1);
+            @include transition;
+        }
+        .overlay {
+            width: 100%;
+            height: 100%;
+            background: $primary-color;
+            @include transition;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.6;
+        }
+    }
+    .icon {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: start;
+        width: 54px;
+        height: 50px;
+
+        img {
+            @include transition;
+        }
+    }
+    .content-wrapper {
+        position: relative;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+    }
+    .title-wrapper {
+        display: flex;
+        gap: 35px;
+        padding-bottom: 25px;
+        border-bottom: none;
+        transition: all 0.6s ease;
+        flex-direction: column;
+        align-items: start;
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: auto;
+            height: 78px;
+            background: transparent;
+        }
+        .title {
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 500;
+            margin: 0;
+            color: $secondary-color;
+            transition: all 0.6s ease;
+
+            @include xl{
+                font-size: 23px;
+            }
+            @include sm{
+                font-size: 21px;
+            }
+        }
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .desc {
+            transition: all 0.6s ease;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 400;
+            margin: 0;
+            color: $text-color;
+        }
+        .read-more {
+            display: flex;
+            justify-content: start;
+            a {
+                display: flex;
+                align-items: center;
+                gap: 18px;
+                font-size: 16px;
+                line-height: 36px;
+                font-weight: 500;
+                text-transform: capitalize;
+                margin-bottom: 0;
+                color: $secondary-color;
+                .icon {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: $orange-color;
+                    flex-shrink: 0;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50px;
+                    color: $primary-color;
+                    z-index: 2;
+                    &:before {
+                        position: absolute;
+                        z-index: -1;
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        border: 2px solid transparent;
+                        border-radius: 50px;
+                        background-image: linear-gradient(white, white), linear-gradient(65deg, #E30008FF 0%, #FAAE00FF 100%);
+                        background-origin: border-box;
+                        background-clip: content-box, border-box;
+                        transform: scale(1);
+                        @include transition;
+
+                    }
+
+                    i {
+                        color: $primary-color;
+                        font-size: 16px;
+                    }
+                }
+                &:hover {
+                    margin-left: 5px;
+                    color: $primary-color;
+                    @include transition;
+
+                    .icon {
+                        &:before {
+                            transform: scale(0);
+                            @include transition;
+                        }
+                        i {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include sm {
+        background-color: $white;
+        box-shadow: 0px 5px 90px 0px rgba(2, 24, 93, 0.08);
+        margin-bottom: 28px;
+        padding: 20px;
+        .divider {
+            &:before {
+                display: none;
+            }
+        }
+        .title-wrapper {
+            gap: 20px;
+            padding-bottom: 15px;
+        }
+        .content {
+            gap: 26px;
+        }
+    }
+    @include md {
+        background-color: $white;
+        box-shadow: 0px 5px 90px 0px rgba(2, 24, 93, 0.08);
+        margin-bottom: 28px;
+        padding: 30px;
+
+        .divider {
+            display: none;
+        }
+        .content {
+            .read-more {
+                a {
+                    .icon {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    @include lg {
+
+        .title-wrapper {
+            gap: 20px;
+            padding-bottom: 15px;
+            .title {
+                font-size: 18px;
+            }
+        }
+        .content {
+            gap: 26px;
+            .desc {
+                font-size: 16px;
+                line-height: 26px;
+            }
+            .read-more {
+                a {
+                    .icon {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

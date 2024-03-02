@@ -1,0 +1,100 @@
+.testimonial-card {
+    padding: 60px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 12px;
+    position: relative;
+    background-color: $white;
+    box-shadow: 0 2px 20px 0 rgba(2, 24, 93, 0.12);
+
+    @include xs{
+        padding: 30px;
+    }
+
+    &:before {
+        position: absolute;
+        width: 90%;
+        height: 100%;
+        background-color: $white;
+        content: "";
+        z-index: -1;
+        border-radius: 12px;
+        bottom: -24px;
+        box-shadow: 0 2px 24px 0 rgba(2, 24, 93, 0.12);
+    }
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .content {
+        .text {
+            margin: 0;
+            font-size: 21px;
+            line-height: 36px;
+            font-weight: 400;
+            font-style: italic;
+            @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+                font-size: 16px;
+            }
+        }
+    }
+    .rating-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .rating {
+            display: flex;
+            align-items: center;
+
+            i {
+                color: #ffc000;
+            }
+        }
+    }
+    .meta-user {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 72px;
+                height: 72px;
+                border-radius: 50px;
+                overflow: hidden;
+            }
+            .info {
+                display: flex;
+                flex-direction: column;
+
+                h2 {
+                    margin: 0;
+                    font-size: 21px;
+                    line-height: 28px;
+                    font-weight: 500;
+                    color: $secondary-color;
+                }
+                p {
+                    margin: 0;
+                    font-size: 16px;
+                    line-height: 30px;
+                    font-weight: 400;
+                    color: #778196;
+                }
+            }
+        }
+    }
+}

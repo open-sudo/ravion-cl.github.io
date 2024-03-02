@@ -1,0 +1,96 @@
+.info-card {
+    &.style-3 {
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+
+        @include md {
+            margin-bottom: 0 !important;
+        }
+        @include sm {
+            margin-bottom: 0 !important;
+        }
+        @include xs {
+            margin-bottom: 60px !important;
+        }
+
+        &:hover{
+            margin-top: 0;
+            .title-wrapper{
+                .icon{
+                    transform: rotateY(360deg);
+                    @include transition;
+                }
+            }
+        }
+
+        .content-right {
+            text-align: right;
+            .title-wrapper {
+                align-items: flex-end;
+            }
+        }
+        .title-wrapper {
+            @include xs{
+                align-items: center;
+            }
+
+            .icon {
+                width: unset;
+                height: unset;
+                transform: rotateY(0deg);
+                @include transition;
+
+                i{
+                    font-size: 58px;
+                    color: $primary-color;
+                }
+            }
+            .title{
+                @include sm{
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .content{
+            @include xs{
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+// Before After Image
+.after-before-image {
+    text-align: center;
+
+    .after-before-image-inner {
+        display: inline-block;
+        width: 480px;
+        height: 480px;
+        border-radius: 500px;
+        overflow: hidden;
+        position: relative;
+
+        @include lg{
+            width: auto;
+            height: auto;
+        }
+        @include xs{
+            width: 100%;
+            height: auto;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+
+        }
+    }
+}

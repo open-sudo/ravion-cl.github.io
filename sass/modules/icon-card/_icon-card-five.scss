@@ -1,0 +1,29 @@
+.icon-card{
+    &.style-five{
+        flex-direction: column;
+        gap: 24px;
+        .icon-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .icon{
+                background-color: transparent;
+                border-radius: unset;
+                width: unset;
+                height: unset;
+                i{
+                    font-size: 48px;
+                    color: $primary-color;
+                }
+            }
+            .title{
+                font-size: 24px;
+                font-weight: 500;
+                margin-bottom: 0;
+                @include xl{
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+}

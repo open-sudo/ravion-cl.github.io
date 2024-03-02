@@ -1,0 +1,55 @@
+.icon-card-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 20px;
+    margin-bottom: 5px;
+
+    @include lg{
+        justify-content: start;
+        gap: 0 80px;
+    }
+
+    .icon-card {
+      width: 50%;
+      padding: 0;
+      gap: 20px;
+      margin-bottom: 0;
+
+      @include lg{
+        width: unset;
+      }
+
+      &:hover{
+        .icon{
+          transform: rotateY(360deg);
+          @include transition;
+        }
+      }
+
+      @include xs{
+        align-items: center;
+      }
+
+      .icon {
+        background: none;
+        transform: rotateY(0deg);
+        @include transition;
+        
+        i{
+          font-size: 70px;
+          color: $primary-color;
+        }
+      }
+      .content {
+        gap: 4px;
+
+        .title {
+          font-size: 21px;
+
+          @include xs{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }

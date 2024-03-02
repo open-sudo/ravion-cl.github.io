@@ -1,0 +1,71 @@
+.service-card {
+  &.style-2 {
+    border: 1px solid #C9CFDCFF;
+    background-color: $white;
+    margin-bottom: 2px;
+
+      .content-wrapper {
+        display: flex;
+        gap: 30px;
+        padding: 30px 45px;
+
+        @include sm {
+          padding: 30px;
+        }
+        @include md {
+          padding: 30px 20px;
+        }
+        @include xl {
+          padding: 30px;
+        }
+        .icon-wrapper {
+          display: flex;
+          flex-shrink: 0;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 24px;
+        }
+        .icon {
+          position: unset;
+          transform: unset;
+          top: unset;
+          left: unset;
+          width: unset;
+          height: unset;
+          flex-shrink: 0;
+          background-color: transparent;
+        }
+        .read-more {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $orange-color;
+          color: $black;
+          font-size: 16px;
+          transform: rotate(-45deg);
+          @include transition;
+        }
+        .title {
+          color: $black;
+          margin-bottom: 20px;
+        }
+      }
+  }
+}
+
+.service-slider-wrapper {
+  .slick-arrow {
+    display: none !important;
+  }
+  .slick-list {
+    margin: 0 -12px;
+
+    .slick-slide {
+      margin: 0 12px;
+    }
+  }
+}

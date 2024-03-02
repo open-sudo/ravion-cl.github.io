@@ -1,0 +1,74 @@
+// progress-area
+.progress-area{
+    .circle-card{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        @include lg{
+          gap: 16px;
+        }
+        @include xs{
+          gap: 20px;
+        }
+
+        .content{
+            p{
+                color: $white;
+                margin-bottom: 0;
+                font-size: 21px;
+                font-family: $heading-font;
+
+                @include lg{
+                  font-size: 18px;
+                }
+                @include xs{
+                  font-size: 18px;
+                }
+                br{
+                  @include rmaxwd(1399){
+                    display: none;
+                  }
+                }
+            }
+        }
+        .circle_percent{
+            margin: 0;
+            font-size: 96px;
+            flex-shrink: 0;
+
+            .percent_text{
+              font-size: 24px;
+              font-family: $heading-font;
+              color: $white;
+            }
+          }
+          .circle_inbox{
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            background-color: #205666;
+          }
+          .round_per{
+            background-color: #2ab97e;
+          }
+          .percent_more{
+            &:after{
+              background-color: #2ab97e;
+            }
+          }
+    }
+    .progress-area-inner{
+      background-color: #205666;
+      border-radius: 12px;
+      padding: 60px;
+
+      @include lg{
+        padding: 40px;
+      }
+      @include xs{
+        padding: 40px;
+      }
+    }
+  }

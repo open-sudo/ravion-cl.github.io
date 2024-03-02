@@ -1,0 +1,27 @@
+.counter-card {
+    &.style-2 {
+      justify-content: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.239);
+      // border-radius: 12px;
+      padding: 60px 0;
+  
+      .counter-item {
+        .counter-title {
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          .counter-icon{
+            i{
+              font-size: 40px;
+              color: $orange-color;
+            }
+          }
+        }
+        .number {
+          font-size: 60px;
+          line-height: 60px;
+          width: 100px;
+        }
+      }
+    }
+  }

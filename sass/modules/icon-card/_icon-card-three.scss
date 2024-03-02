@@ -1,0 +1,65 @@
+.icon-card {
+    &.style-three {
+        display: flex;
+        background: transparent;
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 40px;
+
+        @include sm {
+            gap: 20px;
+        }
+        @include xs {
+            align-items: center;
+            text-align: center;
+        }
+
+        .icon {
+            width: 97px;
+            height: 97px;
+            display: flex;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background-color: $blue-color;
+            justify-content: center;
+            align-items: center;
+
+            @include sm {
+                width: 70px;
+                height: 70px;
+            }
+            @include lg{
+                width: 70px;
+                height: 70px;
+            }
+            i {
+               font-size: 38px;
+            }
+        }
+        .content {
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+            @include lg{
+                gap: 8px;
+            }
+            .title {
+                @include lg{
+                    font-size: 20px;
+                }
+                @include sm{
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+            .desc {
+               @include lg{
+                font-size: 16px;
+               }
+               @include sm{
+                font-size: 16px;
+               }
+            }
+        }
+    }
+}

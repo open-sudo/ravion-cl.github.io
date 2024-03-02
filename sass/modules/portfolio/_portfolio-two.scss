@@ -1,0 +1,66 @@
+
+.portfolio-card {
+  &.style-2{
+    &:hover {
+      .image {
+        .content-wrapper {
+          .content {
+            transform: translateY(0);
+            @include transition;
+          }
+          .btn-wrapper {
+            right: 18px;
+            top: 18px;
+            transform: translate(0);
+            @include transition;
+          }
+        }
+      }
+    }
+
+    .content-wrapper {
+      padding: 12px;
+  
+      .content {
+        padding: 18px;
+        transform: translateY(100%);
+        @include transition;
+  
+        .title {
+          font-size: 21px;
+          line-height: 33px;
+
+          @include md{
+            font-size: 20px;
+            line-height: 30px;
+          }
+          @include xs{
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+  
+      }
+      .btn-wrapper {
+        position: absolute;
+        flex-shrink: 0;
+        padding: 0;
+        top: 0;
+        right: 0;
+        transform: translate(100%, -100%);
+        @include transition;
+  
+        a {
+          background-color: $orange-color;
+          border: none;
+
+          &:hover {
+            @include transition;
+            background-color: $primary-color;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

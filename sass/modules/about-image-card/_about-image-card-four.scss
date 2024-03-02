@@ -1,0 +1,32 @@
+.about-image-card {
+  &.style-four {
+    width: 100%;
+    height: 100%;
+    padding-right: 48px;
+
+    @include md{
+      height: 400px;
+      padding: 0;
+    }
+    @include sm{
+      height: 300px;
+      padding: 0;
+    }
+
+    .image{
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+  }
+}

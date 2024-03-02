@@ -1,0 +1,69 @@
+.about-user-info-card {
+  &.style-2 {
+    display: flex;
+    gap: 40px 58px;
+    align-items: center;
+    margin-top: 4px;
+    flex-wrap: wrap;
+
+    @include xs{
+      gap: 20px;
+    }
+
+    @include xs {
+      justify-content: center;
+    }
+
+    .quote-text {
+      width: 100%;
+      padding-left: 40px;
+      border-left: 6px solid $orange-color;
+      font-style: italic;
+      font-size: 21px;
+      color: $text-color;
+      font-family: $body-font;
+      line-height: 36px;
+
+      p {
+        max-width: 600px;
+      }
+    }
+
+    .about-founder {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      .image {
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .content-wrapper {
+        .title {
+          font-size: 21px;
+          line-height: 36px;
+          margin-bottom: 0;
+        }
+
+        .sub-title {
+          font-family: $body-font;
+          color: #5e6f92;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

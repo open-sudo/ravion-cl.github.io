@@ -1,0 +1,78 @@
+.about-info-card {
+    &.style-four {
+
+      .about-info-content{
+        @include xl{
+          gap: 25px;
+        }
+        @include lg{
+          gap: 20px;
+        }
+        @include sm{
+          gap: 20px;
+        }
+      }
+
+      .section-title{
+        gap: 5px;
+
+        .title{
+          font-size: 48px;
+          line-height: 60px;
+
+          @include xl{
+            font-size: 42px;
+            line-height: 56px;
+          }
+          @include lg{
+            font-size: 36px;
+            line-height: 50px;
+          }
+          @include sm{
+            font-size: 38px;
+            line-height: 50px;
+          }
+          @include xs{
+            font-size: 25px;
+            line-height: 30px;
+          }
+        }
+        .short-title{
+          @include sm{
+            padding-left: 0;
+          }
+        }
+      }
+
+      .list-item-wrapper{
+        display: flex;
+        justify-content: space-between;
+
+        @include lg{
+          flex-direction: column;
+          gap: 5px;
+        }
+        @include sm{
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        ul{
+          li{
+            gap: 15px;
+
+            @include xl{
+              gap: 10px;
+            }
+          }
+        }
+      }
+
+      .btn-wrapper{
+        .theme-btn{
+          padding: 18px 44px;
+          border-radius: 50px;
+        }
+      }
+    }
+}

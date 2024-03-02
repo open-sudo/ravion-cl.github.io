@@ -1,0 +1,19 @@
+.about-info-card {
+    &.style-two {
+      .about-info-content {
+        gap: 40px;
+
+        .section-title{
+          @include xs{
+            text-align: center;
+          }
+        }
+
+        .text{
+          @include xs{
+            text-align: center;
+          }
+        }
+      }
+    }
+}

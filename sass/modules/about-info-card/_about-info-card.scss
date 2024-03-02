@@ -1,0 +1,106 @@
+.about-info-card {
+  .about-info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+
+    .section-title {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 0;
+
+      .title {
+        margin-bottom: 0;
+      }
+    }
+
+    .sub-title,
+    .text,
+    .quote-text {
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .sub-title {
+      font-weight: 500;
+    }
+    .list-item-wrapper {
+      ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        li {
+          font-family: $body-font;
+          color: $text-color;
+          font-weight: 400;
+          font-size: 18px;
+          list-style: none;
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          @include sm{
+            gap: 15px;
+            align-items: start;
+          }
+
+          &:before {
+            content: "\f00c";
+            font-family: $font-awesome;
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            background-color: $sky-color;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $white;
+            flex-shrink: 0;
+            @include sm{
+              margin-top: 6px;
+            }
+          }
+        }
+      }
+    }
+    .quote-text {
+        padding-left: 40px;
+        border-left: 6px solid $orange-color;
+        font-style: italic;
+        font-size: 21px;
+        color: $text-color;
+        font-family: $body-font;
+        line-height: 36px;
+
+      .quote-text-meta {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        margin-top: 5px;
+
+        .divider {
+          width: 25px;
+          height: 1px;
+          background-color: $white-50;
+        }
+        .name {
+          font-family: $heading-font;
+          font-size: 16px;
+          font-weight: 500;
+          color: $secondary-color;
+          font-style: normal;
+        }
+        .designation {
+          font-family: $body-font;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

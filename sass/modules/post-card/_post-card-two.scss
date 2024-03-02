@@ -1,0 +1,42 @@
+.post-card {
+    &.style-2 {
+        flex-direction: column;
+        margin-bottom: 24px;
+        box-shadow: 0 5px 60px 0 rgba(2, 24, 93, 0.1);
+        background-color: $white;
+        overflow: hidden;
+        border-radius: 12px;
+        padding: 30px;
+        border: 1px solid $border;
+        @include transition;
+        @include lg{
+            padding: 24px;
+        }
+        &:hover{
+            @include transition;
+            border-color: transparent;
+        }
+        .image {
+            border-radius: 12px;
+            height: 290px;
+            .btn-link{
+                background-color: $orange-color;
+                i{
+                    color: $black;
+                }
+            }
+        }
+        .content {
+            padding: 0;
+            .title {
+                height: 64px;
+                overflow: hidden;
+                margin-bottom: 28px;
+
+                @include sm {
+                    height: auto;
+                }
+            }
+        }
+    }
+}

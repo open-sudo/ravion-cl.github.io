@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  border: 0;
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: $body-font;
+  color: $text-color;
+  vertical-align: baseline;
+  line-height: 30px;
+  font-smoothing: antialiased;
+  direction: ltr;
+}
+p {
+  margin: 0 0 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-family: $heading-font;
+  color: $secondary-color;
+  font-style: normal;
+  @include transition;
+}
+
+h1 {
+  font-size: 120px;
+  line-height: 132px;
+  font-weight: 500;
+}
+h2 {
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 500;
+}
+h3 {
+  font-size: 36px;
+  line-height: 43px;
+  font-weight: 500;
+}
+h4 {
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 500;
+}
+h5 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 500;
+}
+h6 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+}
+label {
+  color: $text-color;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+}
+button {
+  cursor: pointer;
+  @include transition;
+}
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+}
+a,
+.button {
+  text-decoration: none;
+  @include transition;
+}
+a:focus,
+.button:focus {
+  text-decoration: none;
+  outline: none;
+}
+a:focus {
+  color: $primary-color;
+  text-decoration: none;
+  @include transition;
+}
+a,
+button {
+  color: $primary-color;
+  outline: medium none;
+  @include transition;
+
+  &:hover {
+    color: #ff6731;
+    @include transition;
+  }
+}
+
+
+button:focus,
+input:focus,
+input:focus,
+textarea,
+textarea:focus {
+  outline: 0;
+}
+ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+::-moz-selection {
+  background: $primary-color;
+  text-shadow: none;
+  color: #fff;
+}
+::selection {
+  background: $primary-color;
+  text-shadow: none;
+  color: #fff;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.background-black {
+  background-color: rgb(27, 37, 56);
+}
+
+.bg-light-black {
+  background-color: rgb(49, 55, 63);
+}
+.background-blue {
+  background-color: $blue-color;
+}
+.bg-dark-blue {
+  background-color: rgb(14, 49, 81);
+}
+.background-light-blue {
+  background-color: $light-blue-color;
+}
+.background-skye {
+  background-color: $sky-color;
+}
+
+
+.background-gray {
+  background-color: #f0f4fa;
+}
+.background-light-gray {
+  background-color: #f3f7fc;
+}
+.page-bg {
+  background-color: $black;
+}
+
+.page-area {
+  padding-top: 136px;
+  padding-bottom: 124px;
+}
+.blog-area {
+  padding-top: 144px;
+  padding-bottom: 104px;
+  @include xl{
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  @include lg{
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+  @include md{
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+}
+.blog-grid {
+  padding-top: 120px;
+  padding-bottom: 96px;
+  @include md{
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+  @include sm{
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+}
+.page-area,
+.blog-area {
+
+  @include rmaxwd(991) {
+    padding-top: 100px;
+    padding-bottom: 52px;
+  }
+  @include rmaxwd(767) {
+    padding-top: 70px;
+    padding-bottom: 22px;
+  }
+  .page-links {
+    margin-bottom: 20px;
+  }
+}
+.border-radius-12 {
+  border-radius: 12px;
+}
+.text-white-100 {
+  color: $white-100;
+}
+code {
+  color: $orange-color;
+}
+
+
+.theme-btn,
+.wp-block-loginout a,
+input.theme-btn {
+  display: inline-flex;
+  background-color: $orange-color;
+  color: $black;
+  padding: 18px 48px;
+  text-align: center;
+  font-weight: 500;
+  font-family: $heading-font;
+  text-transform: capitalize;
+  position: relative;
+  z-index: 1;
+  @include transition;
+  font-size: 16px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  @include sm {
+    padding: 15px 34px;
+    gap: 30px;
+    font-size: 16px;
+    line-height: normal;
+  }
+
+  &:before {
+    position: absolute;
+    width: 200%;
+    height: 0%;
+    left: 0;
+    //top: 50%;
+    background-color: $blue-color;
+    //transform: translate(-50%, -50%) rotate(-45deg);
+    content: "";
+    z-index: -1;
+    @include transition;
+  }
+  //i {
+  //  display: inline-flex;
+  //  align-items: center;
+  //  justify-content: center;
+  //  width: 44px;
+  //  height: 44px;
+  //  border-radius: 6px;
+  //  background-color: $blue-color;
+  //  color: #fff;
+  //  font-size: 16px;
+  //}
+
+  &:hover {
+    color: $black;
+
+    &:before {
+      height: 350%;
+      transition: all 500ms linear;
+      background-color: transparent;
+    }
+  }
+  &:focus {
+    color: $white;
+  }
+
+  &.simple-btn {
+    padding: 15px 36px;
+
+    &.arrow-position-left{
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.wp-block-loginout {
+  a {
+    position: relative;
+
+    //&:after {
+    //  display: flex;
+    //  align-items: center;
+    //  justify-content: center;
+    //  content: "\f105";
+    //  font-family: $font-awesome;
+    //  width: 44px;
+    //  height: 44px;
+    //  border-radius: 6px;
+    //  background-color: $primary-color;
+    //  color: #fff;
+    //  font-size: 16px;
+    //}
+  }
+}
+.contact-form-btn {
+  justify-content: center;
+  width: 100%;
+  display: block;
+  line-height: 42px;
+
+  .icon {
+    float: right;
+  }
+
+}
+input.theme-btn {
+  display: inline-block !important;
+  width: inherit !important;
+  border: 0 !important;
+}
+
+// Slider Button
+.slider-arrow-btn-wrapper {
+  display: flex;
+  gap: 11px;
+
+  a {
+    width: 53px;
+    height: 78px;
+    border-radius: 50px;
+    background-color: transparent;
+    box-shadow: 0px 12px 24px 0px rgba(2, 24, 93, 0.06);
+    font-size: 24px;
+    color: $white;
+    border: 2px solid $orange-color;
+    @include transition;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    @include sm {
+      width: 60px;
+      height: 60px;
+    }
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+
+
+// Elementor Default Padding
+.elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+  padding: 0 12px !important;
+
+  @include sm {
+    padding: 0 15px !important;
+  }
+}
+
+.elementor-section.elementor-section-boxed > .elementor-container {
+  @include sm {
+    max-width: 540px !important;
+  }
+  @include md {
+    max-width: 720px !important;
+  }
+  @include lg {
+    max-width: 960px !important;
+  }
+  @include xl {
+
+    max-width: 1140px !important;
+  }
+}
+
+
+// Shape hidden
+.shape{
+  @include rmaxwd(1399){
+    display: none;
+  }
+}

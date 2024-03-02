@@ -1,0 +1,522 @@
+.slider-area {
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  &.style-1 {
+    //&:before {
+    //  position: absolute;
+    //  content: "";
+    //  width: 100%;
+    //  height: 100%;
+    //  background-color: rgb(233, 245, 246);
+    //  z-index: -1;
+    //  bottom: 0;
+    //  left: 0;
+    //}
+
+    .shape{
+      position: absolute;
+      z-index: 5;
+      animation: zoomInOut 3s infinite;
+
+      &.one{
+        width: 80px;
+        height: 80px;
+        top: 70px;
+        left: 70px;
+      }
+      &.two{
+        top: 180px;
+        left: 40%;
+      }
+      &.three{
+        width: 20px;
+        height: 20px;
+        top: 160px;
+        right: 240px;
+      }
+      &.four{
+        width: 22px;
+        height: 22px;
+        bottom: 190px;
+        left: 70px;
+      }
+      &.five{
+        bottom: 220px;
+        right: 180px;
+      }
+    }
+    
+    .slider-wrapper {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-color: #205666;
+    }
+    .single-slider-wrapper{
+      // margin-top: -300px;
+      // &.slick-active{
+      //   .single-slider{
+      //     .slider-image{
+      //       margin-top: 0;
+      //       margin-right: 0;
+      //       @include transition;
+      //       .slider-image-inner{
+      //         width: 770px;
+      //         height: 430px;
+      //         @include transition;
+      //       }
+      //     }
+      //   }
+      // }
+      // &.slick-active{
+      //   .single-slider{
+      //     .slider-image{
+      //       .image-1,
+      //       .image-2{
+      //         img{
+      //           -webkit-animation-name: MovefadeUp;
+      //           animation-name: MovefadeUp;
+      //           -webkit-animation-fill-mode: both;
+      //           @include transition;
+      //         }
+      //       }
+      //       .image-1 {
+      //         img{
+      //           -webkit-animation-delay: 0.3s;
+      //           animation-delay: 0.3s;
+      //           -webkit-animation-duration: 0.3s;
+      //           animation-duration: 0.3s;
+      //         }
+      //       }
+      //       .image-2 {
+      //         img{
+      //           -webkit-animation-delay: 0.5s;
+      //           animation-delay: 0.5s;
+      //           -webkit-animation-duration: 0.5s;
+      //           animation-duration: 0.5s;
+      //         }
+      //       }
+        
+      //       .slider-image-inner {
+      //         &:after{
+      //           -webkit-animation-name: MovefadeUp;
+      //           animation-name: MovefadeUp;
+      //           -webkit-animation-fill-mode: both;
+      //           @include transition;
+      //           -webkit-animation-delay: 0.7s;
+      //           animation-delay: 0.7s;
+      //           -webkit-animation-duration: 0.7s;
+      //           animation-duration: 0.7s;
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
+    }
+    // .single-slider{
+    //   overflow: visible;
+    //   .slider-image{
+    //     margin-top: -590px;
+    //     margin-right: -100px;
+    //     @include transition;
+
+    //     .slider-image-inner{
+    //       width: 630px;
+    //       height: 300px;
+    //       @include transition;
+    //     }
+    //   }
+    // }
+  }
+  .slider-control-btn-wrapper {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 36px;
+
+    @include rmaxwd(1199) {
+      display: none;
+    }
+    .slider-arrow-btn-wrapper {
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+  .single-slider-wrapper { 
+    // Active Slider Animate
+    &.slick-active{
+      .slider-short-title,
+      .slider-title,
+      .slider-short-desc,
+      .slider-btn-wrapper {
+        -webkit-animation-name: MovefadeUp;
+        animation-name: MovefadeUp;
+        -webkit-animation-fill-mode: both;
+      }
+  
+  
+      .slider-short-title {
+        -webkit-animation-delay: 0.3s;
+        animation-delay: 0.3s;
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s;
+      }
+      .slider-title {
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5s;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+      }
+  
+      .slider-short-desc {
+        -webkit-animation-delay: 0.7s;
+        animation-delay: 0.7s;
+        -webkit-animation-duration: 0.7s;
+        animation-duration: 0.7s;
+      }
+  
+      .slider-btn-wrapper {
+        -webkit-animation-delay: 0.9s;
+        animation-delay: 0.9s;
+        -webkit-animation-duration: 0.9s;
+        animation-duration: 0.9s;
+      }
+    }
+
+    // Slick Dots
+    .slick-dots {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      position: absolute;
+      top: 50%;
+      left: 46px;
+      transform: translateY(-50%);
+      z-index: 2;
+      flex-direction: column;
+      margin-bottom: 0;
+
+      @include rmaxwd(1199) {
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        bottom: 100px;
+        top: unset;
+        left: unset;
+        right: unset;
+        transform: none;
+        padding: 0;
+      }
+
+      li {
+        display: inline-block;
+        line-height: 0;
+        outline: 1px solid transparent;
+        border: 4px solid transparent;
+        border-radius: 50px;
+        @include transition;
+
+        button {
+          font-size: 0;
+          padding: 0;
+          width: 11px;
+          height: 11px;
+          background-color: #c3e4de;
+          border-radius: 50px;
+          position: relative;
+          @include transition;
+
+          &:hover {
+            background-color: $orange-color;
+            @include transition;
+          }
+        }
+        &.slick-active {
+          @include transition;
+          outline: 1px solid $orange-color;
+
+          button {
+            @include transition;
+          }
+        }
+      }
+    }
+  }
+  .single-slider {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    height: 890px;
+    @include xl{
+      height: 730px;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1199px) {
+      height: 620px;
+    }
+    @include sm {
+      height: 940px;
+      padding: 0;
+      padding-top: 70px;
+    }
+      .slider-overlay {
+        background-color: #085294;
+        opacity: 0.61;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+      }
+
+      .slider-content-wrapper {
+        position: relative;
+        z-index: 99;
+
+        @include sm {
+          padding-top: 50px;
+          padding-bottom: 50px;
+        }
+        .slider-content {
+          @include sm {
+            text-align: center;
+          }
+
+          .slider-short-title {
+            font-family: $heading-font;
+            font-weight: 500;
+            font-size: 21px;
+            color: $primary-color;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 15px;
+
+            @include lg {
+              font-size: 18px;
+            }
+            @include sm {
+              font-size: 16px;
+            }
+          }
+          .slider-title {
+            font-family: $heading-font;
+            font-weight: 500;
+            font-size: 90px;
+            color: $white;
+            line-height: 100px;
+            margin-bottom: 30px;
+
+            span {
+              font-weight: 600;
+            }
+            @media only screen and (min-width: 992px) and (max-width: 1400px){
+              font-size: 60px;
+              line-height: 64px;
+            }
+
+            @include lg {
+              font-size: 48px;
+              line-height: 56px;
+            }
+            @include md {
+              font-size: 42px;
+              line-height: 52px;
+            }
+            @include sm {
+              font-size: 38px;
+              line-height: 44px;
+              margin-bottom: 20px;
+            }
+          }
+          .slider-short-desc {
+            font-size: 24px;
+            color: $white;
+            line-height: 36px;
+
+            @include lg {
+              font-size: 18px;
+              line-height: 32px;
+            }
+            @include md {
+              font-size: 18px;
+              line-height: 32px;
+            }
+            @include sm {
+              font-size: 18px;
+              line-height: 32px;
+            }
+          }
+          .slider-btn-wrapper {
+            margin-top: 50px;
+
+            @include sm {
+              margin-top: 30px;
+            }
+          }
+        }
+
+      }
+    .slider-image {
+      //z-index: 2;
+      //width: 860px;
+      // animation: MoveUpDown 2s linear infinite alternate;
+      text-align: right;
+      //right: -110px;
+      //top: 20px;
+      position: relative;
+      .image-1,
+      .image-2{
+        position: absolute;
+        width: 630px;
+        height: 300px;
+        transform: rotate(310deg);
+        border-radius: 300px;
+        overflow: hidden;
+        @include transition;
+        @include rmaxwd(1399){
+          width: 530px;
+          height: 230px;
+        }
+        @include md{
+          width: 500px;
+          height: 207px;
+        }
+        @include sm{
+          width: 500px;
+          height: 207px;
+          display: none;
+        }
+      }
+      .image-1{
+        top: -100%;
+        left: -5%;
+        @include xl{
+          top: -100%;
+        }
+        @include lg{
+          left: -17%;
+        }
+        @include md{
+          top: -134%;
+          left: -16%;
+        }
+        @include sm{
+          top: -134%;
+          left: -16%;
+        }
+        img{
+          position: relative;
+          bottom: 0px;
+          left: -190px;
+          width: 100%;
+          height: 100%;
+          transform: rotate(-310deg);
+        }
+      }
+      .image-2{
+        bottom: -105%;
+        right: -4%;
+        @include xl{
+          bottom: -104%;
+        }
+        @include rmaxwd(1199){
+          bottom: -113%;
+          right: -17%;
+        }
+        @include md{
+          bottom: -152%;
+        }
+        @include sm{
+          bottom: -135%;
+        }
+        img{
+          height: 100%;
+          transform: rotate(50deg);
+          position: relative;
+          bottom: 90px;
+          right: -270px;
+        }
+      }
+      .slider-image-inner {
+        position: relative;
+        transform: rotate(308deg);
+        border-radius: 300px;
+        width: 770px;
+        height: 430px;
+        overflow: hidden;
+        display: inline-block;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include transition;
+        @include xl{
+          width: 670px;
+          height: 355px;
+        }
+        @include rmaxwd(1199){
+          width: 570px;
+          height: 300px;  
+        }
+        @include md{
+          width: 470px;
+          height: 240px;
+        }
+        @include sm{
+          width: 350px;
+          height: 415px;
+          border-radius: 12px;
+          transform: rotate(0deg);
+        }
+
+        img{
+          position: absolute;
+          z-index: -1;
+          width: 750px;
+          height: 750px;
+          top: -200px;
+          right: 40px;
+          transform: rotate(51deg);
+          object-fit: cover;
+
+          @include rmaxwd(991){
+            top: -217px;
+          }
+          @include sm{
+            width: 100%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            transform: rotate(0deg);
+          }
+        }
+      }
+      
+      img {
+        // width: 100%;
+        // height: 100%;
+        // transform: rotate(-309deg);
+        // object-fit: cover;
+        // position: absolute;
+        // left: 0;
+        // top: 0;
+      }
+
+      @include sm {
+        animation: none;
+        //margin-bottom: -150px;
+        right: unset;
+        text-align: center;
+      }
+      @include rmaxwd(1799) {
+        width: auto;
+        margin-top: inherit;
+      }
+
+    }
+  }
+}

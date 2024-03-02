@@ -1,0 +1,28 @@
+.about-video-card {
+    display: flex;
+    gap: 30px;
+    margin-top: 12px;
+
+    @include lg {
+      align-items: center;
+    }
+    @include sm {
+      gap: 20px;
+    }
+    @include xs {
+      flex-direction: column;
+    }
+
+    .video-desc{
+      p{
+        margin: 0;
+
+        @include lg{
+          padding-right: 100px;
+        }
+        @include sm{
+          font-size: 16px;
+        }
+      }
+    }
+  }

@@ -1,0 +1,89 @@
+.process-step {
+    &.style-three {
+        background: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        padding: 0 30px;
+        position: relative;
+
+        &:hover{
+            .icon{
+                transform: scale(1.02);
+                @include transition;
+
+                .count{
+                    transform: rotateY(360deg);
+                    @include transition;
+                }
+            }
+        }
+        @include xl{
+            padding: 0;
+        }
+        @include lg{
+            padding: 0;
+            gap: 24px;
+        }
+        @include sm{
+            padding: 0;
+            gap: 24px;
+        }
+
+        .icon{
+            position: relative;
+            width: 184px;
+            height: 184px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 50%;
+            transform: scale(1.001);
+            @include transition;
+
+            .count{
+                position: absolute;
+                z-index: 5;
+                top: 0;
+                left: 0;
+                width: 45px;
+                height: 45px;
+                transform: translate(0, 0);
+                transform: rotateY(0deg);
+                @include transition;
+                span{
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .content{
+            @include lg{
+                gap: 12px;
+            }
+
+            .desc{
+                @include lg{
+                    font-size: 16px;
+                }
+                @include xs{
+                    max-width: 230px;
+                }
+            }
+        }
+        .arrow{
+            position: absolute;
+            right: -46px;
+            top: 85px;
+            @include lg{
+                right: -35px;
+                top: 85px;
+                width: 44px;
+            }
+            @include rmaxwd(991){
+                display: none;
+            }
+        }
+    }
+}

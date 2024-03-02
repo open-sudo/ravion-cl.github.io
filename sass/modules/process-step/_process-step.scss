@@ -1,0 +1,68 @@
+.process-steps-wrapper {
+    padding: 70px 0px 10px 50px;
+    background: #31373f;
+}
+.process-step {
+    position: relative;
+    padding: 60px 30px 34px 30px;
+    border-radius: 10px;
+    background: $white;
+    margin-bottom: 24px;
+    text-align: center;
+
+    @include rmaxwd(991) {
+        margin-bottom: 60px;
+    }
+
+    @include lg {
+        padding: 60px 15px 34px 15px;
+    }
+    &:hover {
+        .count {
+            &:before {
+                transform: scale(1) rotateY(360deg);
+                @include transition;
+            }
+        }
+    }
+    .count {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $orange-color;
+        width: 67px;
+        height: 67px;
+        border-radius: 50px;
+        color: $black;
+
+        span {
+            font-size: 24px;
+            line-height: 36px;
+            font-weight: 500;
+        }
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .title {
+            margin: 0;
+            font-size: 24px;
+            line-height: 36px;
+            font-weight: 500;
+            color: $secondary-color;
+        }
+        .desc {
+            margin: 0;
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 400;
+            color: $text-color;
+        }
+    }
+}

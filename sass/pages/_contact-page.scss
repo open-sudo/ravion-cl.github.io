@@ -1,0 +1,63 @@
+// Contact Form Area
+.contact-form-area {
+    padding: 120px 0;
+
+    @include sm {
+        padding: 80px 0;
+    }
+    @include md {
+        padding: 100px 0;
+    }
+    .contact-info-area {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .comment-respond {
+        padding: 0;
+        margin-top: -15px;
+        border: 0;
+
+        @include rmaxwd(991) {
+            margin-top: 50px;
+        }
+        .post-comments-title {
+            h2 {
+                font-size: 48px;
+                line-height: initial;
+
+                @include sm {
+                    font-size: 28px;
+                    justify-content: center;
+                }
+                @include md {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}
+// Contact Form Map
+.contact-map-area {
+    padding-bottom: 120px;
+
+    @include sm {
+        padding-bottom: 80px;
+    }
+    @include md {
+        padding-bottom: 100px;
+    }
+    .map-widget {
+        margin-bottom: -10px;
+
+        iframe {
+            width: 100%;
+            height: 470px;
+            border-radius: 12px;
+
+            @include sm {
+                height: 350px;
+            }
+        }
+    }
+}

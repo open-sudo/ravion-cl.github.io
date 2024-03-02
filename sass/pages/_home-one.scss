@@ -1,0 +1,442 @@
+// Portfolio Area
+.portfolio-area {
+  &.style-1 {
+    padding-top: 120px;
+    padding-bottom: 96px;
+    position: relative;
+
+    @include md {
+      padding-top: 100px;
+      padding-bottom: 76px;
+    }
+    @include sm {
+      padding-top: 80px;
+      padding-bottom: 56px;
+    }
+
+    .shape{
+      position: absolute;
+      animation: zoomInOut 3s infinite;
+
+      &.one{
+        top: 370px;
+        right: 120px;
+      }
+    }
+
+    .portfolio-wrapper {
+      // padding-left: 100px;
+
+      @include rmaxwd(1399) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+// About Us Area
+.about-us-area {
+    &.style-1 {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      position: relative;
+
+      @include md() {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+      @include sm() {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      .shape{
+        position: absolute;
+        animation: zoomInOut 3s infinite;
+
+        &.one{
+          width: 60px;
+          height: 60px;
+          bottom: 50px;
+          left: 180px;
+        }
+      }
+
+      .about-info-card {
+        .about-info-content {
+          padding-left: 96px;
+
+          @include xl{
+            padding: 0;
+          }
+          @include lg{
+            padding-left: 24px;
+          }
+          @include md{
+            padding-left: 24px;
+          }
+          @include sm{
+            padding-left: 12px;
+          }
+          @include rmaxwd(1199) {
+            padding-top: 60px;
+          }
+        }
+      }
+    }
+}
+
+// Counter Up Area
+.counter-up-area {
+  &.style-1 {
+    margin-bottom: -120px;
+  }
+
+  .counter-card-area {
+    background-color: $blue-color;
+    padding: 68px 80px;
+    border-radius: 12px;
+    position: relative;
+    z-index: 5;
+
+    @include md{
+      padding: 40px;
+    }
+    @include sm{
+      padding: 30px;
+    }
+    @include xs{
+      padding: 40px;
+    }
+    
+    .overlay{
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.5;
+    }
+  }
+}
+
+// Why Choose Us Area
+.feature-area {
+  &.style-1 {
+    padding: 120px 0;
+    position: relative;
+
+    @include md {
+      padding-top: 80px;
+      padding-bottom: 72px;
+    }
+    @include sm {
+      padding-top: 60px;
+      padding-bottom: 52px;
+    }
+
+    .shape{
+      position: absolute;
+      animation: zoomInOut 3s infinite;
+      
+      &.one{
+        top: 170px;
+        left: 100px;
+      }
+      &.two{
+        bottom: 85px;
+        right: 160px;
+      }
+    }
+
+    .section-title {
+      margin-bottom: 70px;
+    }
+  }
+}
+
+// Service Area
+.service-area {
+  &.style-1 {
+    padding-top: 230px;
+    padding-bottom: 96px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+
+    @include md {
+      padding-top: 220px;
+      padding-bottom: 76px;
+    }
+    @include sm {
+      padding-top: 200px;
+      padding-bottom: 56px;
+    }
+
+    .shape{
+      position: absolute;
+      animation: zoomInOut 3s infinite;
+
+      &.one{
+        bottom: -50px;
+        left: 90px;
+        animation: MoveUpDown 2s linear infinite alternate;
+      }
+      &.two{
+        top: 360px;
+        right: 100px;
+      }
+    }
+
+    .section-title .sec-desc {
+      color: #abb2c1;
+    }
+    .section-title{
+      br{
+        @include xl{
+          display: none;
+        }
+      }
+      .sec-desc{
+        a{
+          color: $white;
+          i{
+            color: $white;
+          }
+          &:hover{
+            // color: $orange-color;
+          }
+        }
+      }
+    }
+
+    .service-card {
+      // border: 0;
+      //.content-wrapper {
+      //  .title {
+      //    color: $white;
+      //  }
+      //  .short-desc {
+      //    color: #abb2c1;
+      //  }
+      //  .btn-wrapper {
+      //    a {
+      //      color: $white;
+      //    }
+      //  }
+      //}
+    }
+
+  }
+}
+
+// FAQ Area
+.faq-area {
+  &.style-1 {
+    margin-bottom: -120px;
+
+    .section-title {
+      margin-bottom: 50px;
+
+      .title {
+        font-size: 48px;
+        line-height: 60px;
+
+        @include sm {
+          font-size: 38px;
+          line-height: 42px;
+        }
+      }
+    }
+
+    .faq-wrapper {
+      background-color: $primary-color;
+      display: flex;
+      border-radius: 12px;
+      overflow: hidden;
+
+      @include rmaxwd(1199) {
+        flex-direction: column;
+      }
+      .accordion-wrapper {
+        padding: 66px;
+
+        @include sm {
+          padding: 40px 30px;
+        }
+      }
+      .image {
+        width: 50%;
+        flex-shrink: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+
+      @include rmaxwd(1199) {
+        width: 100%;
+        height: 450px;
+      }
+
+      }
+    }
+  }
+}
+
+// Process Step Area
+.process-step-area {
+  background-color: rgb(233, 245, 246);
+  padding: 120px 0 96px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  @include rmaxwd(991) {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  @include rmaxwd(767) {
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+}
+
+// Why Choose Us
+.why-choose-us-area {
+  padding: 120px 0;
+  position: relative;
+
+  @include sm {
+    padding-top: 80px;
+    padding-bottom: 44px;
+  }
+  @include md {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .shape{
+    position: absolute;
+    animation: zoomInOut 3s infinite;
+
+    &.one{
+      right: 165px;
+      top: 120px;
+    }
+    &.two{
+      left: 165px;
+      bottom: 120px;
+    }
+  }
+
+  .icon-card{
+    &:hover{
+      .icon{
+        animation: bounce;
+        animation-duration: 0.8s;
+      }
+    }
+  }
+}
+// Brand Slider Logo Area
+.brand-slider-area {
+  padding-top: 90px;  
+  padding-bottom: 110px;
+
+  @include sm {
+    padding-top: 45px;
+    padding-bottom: 70px;
+  }
+  @include md {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+}
+
+// News Area
+.latest-posts-area {
+  &.style-1 {
+    padding-top: 243px;
+    padding-bottom: 0;
+    position: relative;
+
+    @include sm{
+      padding-top: 196px;
+    }
+
+    .shape{
+      position: absolute;
+      animation: zoomInOut 3s infinite;
+
+      &.one{
+        width: 20px;
+        height: 20px;
+        top: 390px;
+        right: 160px;
+      }
+    }
+
+    .section-title {
+      margin-bottom: 70px;
+      @include rmaxwd(767) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+// Testimonial Area
+.testimonial-slider-area {
+  &.style-1 {
+    padding-top: 230px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    @include sm{
+      padding-top: 192px;
+    }
+
+    .shape{
+      position: absolute;
+      transform: rotate(90deg);
+      
+      &.one{
+        top: 7%;
+        right: 15%;
+        animation: MoveLeftRight 2s linear infinite alternate;
+      }
+    }
+
+    .testimonial-slider-wrapper {
+      margin-top: 0;
+      margin-bottom: -150px;
+    }
+    .slider-arrow-btn-wrapper{
+      a{
+        width: 77px;
+        height: 52px;
+      }
+    }
+  }
+}
+
+// Price Area
+.pricing-area {
+  &.style-1 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    @include md {
+      padding-top: 100px;
+      padding-bottom: 70px;
+    }
+    @include sm {
+      padding-top: 80px;
+      padding-bottom: 50px;
+    }
+  }
+}

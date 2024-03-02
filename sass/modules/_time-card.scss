@@ -1,0 +1,196 @@
+.time-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .time-card-item {
+        width: 100%;
+        padding: 30px 0;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        align-items: center;
+
+        &:nth-of-type(even) {
+            flex-direction: row-reverse;
+
+            .time-card-time {
+                .time-card-date {
+                    &:before {
+                        left: unset;
+                        right: 0;
+                    }
+                }
+            }
+        }
+        &::after {
+            content: "";
+            width: 6px;
+            height: 100%;
+            right: 0;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            position: absolute;
+            background-color: #cddfe0;
+            border-radius: 50px 50px 0 0;
+
+            @media only screen and (min-width: 992px) and (max-width: 1399px) {
+                display: none;
+            }
+        }
+        .time-card-desc {
+            width: 424px;
+            background-color: $white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 32px 0 rgba(2, 24, 93, 0.08);
+            padding: 46px;
+            border-radius: 12px;
+            @include sm{
+                padding: 32px;
+            }
+            @include rmaxwd(450) {
+                width: 100%;
+            }
+            .title {
+                display: block;
+                margin-bottom: 20px;
+
+                h2 {
+                    margin: 0;
+                    font-family: $heading-font;
+                    font-size: 24px;
+                    line-height: initial;
+                    font-weight: 500;
+                    color: #1c2325;
+                }
+            }
+            .desc {
+                p {
+                    margin: 0;
+                    font-family: $body-font;
+                    font-size: 18px;
+                    line-height: 30px;
+                    font-weight: 400;
+                    color: $text-color;
+                }
+            }
+        }
+        .circle-wrapper {
+            position: relative;
+            width: 248px;
+
+            .time-card-circle {
+                position: relative;
+                @include rmaxwd(991) {
+                    height: 85px;
+                }
+                &:before {
+                    content: "";
+                    min-width: 30px;
+                    min-height: 30px;
+                    border-radius: 50px;
+                    background: $orange-color;
+                    flex-shrink: 0;
+                    position: absolute;
+                    z-index: 3;
+                    transform: translate(-50%, -50%);
+                    left: 50%;
+                    top: 50%;
+                }
+                &:after {
+                    content: "";
+                    width: 100%;
+                    height: 6px;
+                    right: 0;
+                    left: 0;
+                    top: 50%;
+                    position: absolute;
+                    background-color: #cddfe0;
+                    transform: translateY(-50%);
+                    @include rmaxwd(991) {
+                        left: 50%;
+                        top: 50%;
+                       transform: translate(-50%, -50%);
+                        width: 3px;
+                        height: 100%;
+                    }
+                }
+            }
+
+        }
+        .time-card-time {
+
+            .time-card-date {
+                color: #6d768a;
+                font-size: 18px;
+                line-height: 30px;
+                font-weight: 400;
+                font-family: $body-font;
+                display: inline-block;
+                padding: 9px 35px;
+                margin-bottom: 0;
+                position: relative;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 18px;
+                    height: 18px;
+                    background-color: $blue-color;
+                    border-radius: 50%;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        @include sm {
+            flex-direction: column-reverse;
+            padding: 0;
+            align-items: center;
+            padding-bottom: 30px;
+            &:nth-of-type(even) {
+                flex-direction: column-reverse;
+            }
+            &:after {
+                display: none;
+            }
+        }
+        @include md {
+            flex-direction: column-reverse;
+            padding: 30px 0;
+            align-items: center;
+            padding-bottom: 30px;
+            &:nth-of-type(even) {
+                flex-direction: column-reverse;
+            }
+            &:after {
+                display: none;
+            }
+        }
+        @include lg {
+            padding: 30px 0;
+        }
+        @media only screen and (min-width: 1200px) and (max-width: 1439px) {
+            padding: 30px 8px;
+        }
+    }
+    .time-card-arrow {
+        flex-shrink: 0;
+        width: 42px;
+        height: 42px;
+        border-radius: 50px;
+        background: $orange-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+            font-size: 16px;
+            color: $black;
+        }
+    }
+}

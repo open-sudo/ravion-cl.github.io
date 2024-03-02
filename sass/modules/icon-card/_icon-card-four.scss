@@ -1,0 +1,30 @@
+.icon-card {
+    &.style-four {
+        padding: 0;
+        gap: 25px;
+        margin-bottom: 0;
+        align-items: center;
+
+        @include sm {
+            text-align: center;
+        }
+        .icon {
+            width: 90px;
+            height: 90px;
+            background: $orange-color;
+            border-radius: 50px;
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            font-size: 24px;
+
+            i{
+                font-size: 28px;
+                color: $black;
+            }
+        }
+        .content {
+            gap: 10px;
+        }
+    }
+}
